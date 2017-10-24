@@ -3,6 +3,9 @@ package cc.blog.aop.advice.before;
 import org.junit.Test;
 import org.springframework.aop.BeforeAdvice;
 import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.context.support.XmlWebApplicationContext;
 
 /**
  * Created by Elvis on 2017/10/9.
@@ -26,5 +29,13 @@ public class BeforeAdviceTest {
         proxy.greetTo("张三");
         proxy.serveTo("李四");
 
+    }
+
+    @Test
+    public void applicationBefore(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Waiter proxy = (Waiter) context.getBean("waiter");
+        proxy.greetTo("张三");
+        proxy.serveTo("李四");
     }
 }

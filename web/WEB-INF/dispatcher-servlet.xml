@@ -10,9 +10,9 @@
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 
-    <mvc:annotation-driven conversion-service="conversionService"/>
+    <!--<mvc:annotation-driven conversion-service="conversionService"/>-->
 
-    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+    <!--<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
             <set>
                 <bean class="cc.blog.web.converter.ConverterDemo1"/>
@@ -28,13 +28,13 @@
         <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
         <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
         <bean class="org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter"/>
-        <!--<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>-->
+        &lt;!&ndash;<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>&ndash;&gt;
         <bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter"
             p:marshaller-ref="xmlMarshaller"
             p:unmarshaller-ref="xmlMarshaller"/>
-    </util:list>
+    </util:list>-->
 
-    <bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+    <!--<bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
         <property name="streamDriver">
             <bean class="com.thoughtworks.xstream.io.xml.StaxDriver"/>
         </property>
@@ -43,9 +43,10 @@
                 <value>cc.blog.po.User</value>
             </list>
         </property>
-    </bean>
+    </bean>-->
 
     <context:component-scan base-package="cc.blog.web.controller"/>
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
             p:prefix="/jsp"
             p:suffix=".jsp"/>

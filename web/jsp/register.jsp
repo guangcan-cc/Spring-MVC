@@ -10,7 +10,13 @@
         密  码：<input type="password" value="${user.password}" name="password"/><br>
         地  址：<input type="text" value="${user.address}" name="address"/><br>
         <input type="reset" value="重置"/>
-        <input type="submit" value="注册"/>
+        <input type="button" value="注册"/>
     </form>
 </body>
+<script>
+    function ajaxSubmit(){
+        $.ajax
+    }
+
+</script>
 </html>
